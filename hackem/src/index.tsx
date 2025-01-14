@@ -8,7 +8,7 @@ export default function Command() {
     <List>
       <List.Item
         title="Status"
-        icon={Icon.Link}
+        icon={Icon.SquareEllipsis}
         actions={
           <ActionPanel>
             <Action.Push title="Status" target={<Status />} />
@@ -17,7 +17,7 @@ export default function Command() {
       />
       <List.Item
         title="Going"
-        icon={Icon.Link}
+        icon={Icon.Footprints}
         actions={
           <ActionPanel>
             <Action.Push
@@ -29,7 +29,7 @@ export default function Command() {
       />
       <List.Item
         title="Not Going"
-        icon={Icon.Link}
+        icon={Icon.BathTub}
         actions={
           <ActionPanel>
             <Action.Push
@@ -43,7 +43,7 @@ export default function Command() {
       />
       <List.Item
         title="In"
-        icon={Icon.Link}
+        icon={Icon.CheckCircle}
         actions={
           <ActionPanel>
             <Action.Push
@@ -55,7 +55,7 @@ export default function Command() {
       />
       <List.Item
         title="Out"
-        icon={Icon.Link}
+        icon={Icon.Circle}
         actions={
           <ActionPanel>
             <Action.Push
@@ -67,7 +67,7 @@ export default function Command() {
       />
       <List.Item
         title="Open"
-        icon={Icon.Link}
+        icon={Icon.Sun}
         actions={
           <ActionPanel>
             <Action.Push
@@ -79,7 +79,7 @@ export default function Command() {
       />
       <List.Item
         title="Close"
-        icon={Icon.Link}
+        icon={Icon.Moon}
         actions={
           <ActionPanel>
             <Action.Push

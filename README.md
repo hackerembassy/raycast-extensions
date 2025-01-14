@@ -2,8 +2,6 @@
 
 Welcome to the private extension store of hacker-embassy. This is a place where you can collaborate on your extensions with your teammates.
 
-![Extension Store](https://raw.githubusercontent.com/raycast/extensions/main/images/header.png)
-
 ## Getting Started
 
 1. Visit our [documentation](https://developers.raycast.com) to get up to speed with our API.
@@ -13,3 +11,8 @@ Welcome to the private extension store of hacker-embassy. This is a place where 
 ---
 
 Join our [Slack community](https://raycast.com/community) to send feedback, debug nasty bugs or simply get to know like-minded folks.
+
+## Setup
+
+1. Create an API token in @HackerEmbassyBot by running `/token set`.  
+2. Pass this token to the extension configuration in Raycast.  

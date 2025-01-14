@@ -3,7 +3,7 @@
   "name": "hacker-embassy",
   "title": "Hacker Embassy",
   "description": "Control Hacker Embassy account from Raycast",
-  "icon": "icon.png",
+  "icon": "hackem.png",
   "author": "mikalai_kisialiou",
   "owner": "hacker-embassy",
   "categories": [
@@ -32,13 +32,6 @@
       "type": "textfield",
       "default": "https://gateway.hackem.cc",
       "required": false
-    },
-    {
-      "name": "username",
-      "title": "Username",
-      "description": "Your telegram username",
-      "type": "textfield",
-      "required": true
     },
     {
       "name": "token",
