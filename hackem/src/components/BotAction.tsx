@@ -2,12 +2,12 @@ import { Detail } from "@raycast/api";
 
 import { useEffect, useState } from "react";
 
-interface CommandProps {
+export interface BotActionProps {
   successMessage: string;
   apiCall: () => Promise<boolean>;
 }
 
-export default function Command({ successMessage, apiCall }: CommandProps) {
+export default function Command({ successMessage, apiCall }: BotActionProps) {
   const [message, setMessage] = useState<string>("");
   const [isLoading, setIsLoading] = useState(true);
 

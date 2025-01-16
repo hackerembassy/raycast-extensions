@@ -12,6 +12,10 @@ class BotAPI {
     return (await this.request("/text/status")).text();
   }
 
+  public async getPeople() {
+    return (await this.request("/api/inside")).json();
+  }
+
   public async setGoing(value: boolean) {
     return (
       await this.request("/api/setgoing", "POST", {
