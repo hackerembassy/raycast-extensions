@@ -2,6 +2,7 @@ import { ActionPanel, Action, Icon, List } from "@raycast/api";
 import Status from "./status";
 import People from "./people";
 import BotAction from "./components/BotAction";
+import InputAction from "./components/InputAction";
 import botapi from "./lib/botapi";
 import ConfirmedAction from "./components/ConfirmedAction";
 
@@ -109,6 +110,26 @@ export default function Command() {
                   <ConfirmedAction successMessage="Space is closed for guests" apiCall={botapi.close.bind(botapi)} />
                 }
               />
+            </ActionPanel>
+          }
+        />
+      </List.Section>
+      <List.Section title="Fun">
+        <List.Item
+          title="Text to Led Matrix"
+          icon={Icon.Text}
+          actions={
+            <ActionPanel>
+              <Action.Push title="Text" target={<InputAction onSubmit={botapi.text.bind(botapi)} />} />
+            </ActionPanel>
+          }
+        />
+        <List.Item
+          title="Say in Space"
+          icon={Icon.Speaker}
+          actions={
+            <ActionPanel>
+              <Action.Push title="Say" target={<InputAction onSubmit={botapi.say.bind(botapi)} />} />
             </ActionPanel>
           }
         />

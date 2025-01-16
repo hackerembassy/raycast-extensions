@@ -1,5 +1,6 @@
 import fetch from "node-fetch";
 import preferences from "./preferences";
+import { ok, text, json } from "./utils";
 
 class BotAPI {
   private baseURL: string;
@@ -8,20 +9,18 @@ class BotAPI {
     this.baseURL = baseURL;
   }
 
-  public async getStatus() {
-    return (await this.request("/text/status")).text();
+  public getStatus() {
+    return this.request("/text/status").then(text);
   }
 
-  public async getPeople() {
-    return (await this.request("/api/inside")).json();
+  public getPeople() {
+    return this.request("/api/inside").then(json);
   }
 
-  public async setGoing(value: boolean) {
-    return (
-      await this.request("/api/setgoing", "POST", {
-        isgoing: value,
-      })
-    ).ok;
+  public setGoing(value: boolean) {
+    return this.request("/api/setgoing", "POST", {
+      isgoing: value,
+    }).then(ok);
   }
 
   public going() {
@@ -32,24 +31,32 @@ class BotAPI {
     return this.setGoing(false);
   }
 
-  public async open() {
-    return (await this.request("/api/open", "POST")).ok;
+  public open() {
+    return this.request("/api/open", "POST").then(ok);
   }
 
-  public async close() {
-    return (await this.request("/api/close", "POST")).ok;
+  public close() {
+    return this.request("/api/close", "POST").then(ok);
   }
 
-  public async in() {
-    return (await this.request("/api/in", "POST")).ok;
+  public in() {
+    return this.request("/api/in", "POST").then(ok);
   }
 
-  public async out() {
-    return (await this.request("/api/out", "POST")).ok;
+  public out() {
+    return this.request("/api/out", "POST").then(ok);
   }
 
-  private async request(path: string, method = "GET", body?: unknown) {
-    return await fetch(this.baseURL + path, {
+  public text(text: string) {
+    return this.request("/api/embassy/text", "POST", { text }).then(ok);
+  }
+
+  public say(text: string) {
+    return this.request("/api/embassy/say", "POST", { text }).then(ok);
+  }
+
+  private request(path: string, method = "GET", body?: unknown) {
+    return fetch(this.baseURL + path, {
       method,
       body: JSON.stringify(body),
       headers: {
